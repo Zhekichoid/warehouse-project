@@ -1,0 +1,11 @@
+{% load static %}
+
+{% if product_list %}
+    <ul>
+    {% for product in product_list %}
+    <li><a href="{% url 'products:detail' product.id %}">{{ product.product_id }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
